@@ -1,5 +1,17 @@
 import 'import/styles/globals.css'
+import { useState, createContext } from 'react'
+
+export const ThemeContext = createContext()
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+  const [theme, setTheme] = useState('light')
+
+  return (
+    <ThemeContext.Provider value={{theme, setTheme}}>
+    <div className={theme=='light'?'light':'dark'}>
+      <Component {...pageProps} />
+    </div>
+     </ThemeContext.Provider>
+  )
 }
