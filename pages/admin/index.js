@@ -8,7 +8,7 @@ import Posts from './components/posts'
 export const FormContext = createContext()
 export const PostContext = createContext()
 
-const index = () => {
+const Index = () => {
 
 
     const [input, setInput] = useState({
@@ -56,4 +56,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index
